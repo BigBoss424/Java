@@ -1,0 +1,130 @@
+import java.util.Scanner;
+import java.util.*;
+
+public class DP5262014 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner kb = new Scanner(System.in);
+		int choice;
+		
+		do
+		{
+			displayMenu();
+			
+			while(true)
+			{
+				try
+				{
+					System.out.print("Choice: ");
+					choice = kb.nextInt();
+					
+					if(choice < 1 || choice > 6)
+						throw new IllegalArgumentException();
+					break;
+				}
+				catch(Exception e)
+				{
+					System.err.print("Invalid choice.\n");
+				}
+				finally
+				{
+					kb.nextLine();
+				}
+			}//end while loop
+			
+			switch(choice)
+			{
+				case 1:
+					   helloWorld();
+					   break;
+				case 2:
+					   break;
+				case 3: isPalidrome();
+					    break;
+				case 4: 
+					   break;
+				case 5:
+					   break;
+				case 6:
+					   System.out.println("Exitting Program...");
+					   System.exit(0);
+					   break;
+				default:
+					System.out.println("Wrong input try again.");
+					break;
+			}
+		}while(choice > 0 && choice < 9);
+		
+		
+	}
+	
+	public static void displayMenu()
+	{
+		System.out.println("Please choose from the following options");
+		System.out.println("1) Print Hello World");
+		System.out.println("2) First 100 numbers divisible by 3 and 5");
+		System.out.println("3) Palindrome Check");
+		System.out.println("4) Remove a specified letter from a word");
+		System.out.println("5) Sum all the elements of an array");
+		System.out.println("6) Exit");
+	}
+	
+	/*
+	 * This method will simply display Hello World from the command line
+	 */
+	
+	private static void helloWorld()
+	{
+		System.out.println("Hello World\n");
+	}
+	/*
+	 * This method will return an array of the first 100 numbers 
+	 * that are divisible by 3 and 5.
+	 */
+	
+	/*
+	 * Gotta create an array of integers randomly then compare 
+	 * their values on whether or not they are divisible by three
+	 * and 5.
+	 */
+	
+	public int[] threeByFive(int [] array)
+	{
+		Random randomGenerator = new Random();
+		int randomNumber = randomGenerator.nextInt();
+		System.out.println("Generating numbers");
+		
+		for(int i = 0; i < array.length;i++)
+		{
+			array[i] = randomNumber;
+		}
+		
+		return array;
+	}
+	
+	/*
+	 * This method will check for palindromes
+	 * Maybe later for fun I can check it recursively. 
+	 */
+	
+	public static boolean isPalidrome()
+	{   
+		String reverse = "";
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter a string to check if it is a palindrome");
+		String word = kb.nextLine();
+		
+		int length = word.length();
+		for(int i = length - 1; i >= 0; i--)
+		reverse = reverse + word.charAt(i);
+		
+		if(word.equals(reverse))
+		{
+			return true;
+		}
+		else
+			return false;
+	}//end isPalidrome method
+}

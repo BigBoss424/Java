@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.util.*;
+
+public class DP5262014 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner kb = new Scanner(System.in);
+		int choice = 0;
+		
+		
+			displayMenu(choice);
+			do{
+			if(choice == 1)
+			{
+				System.out.println("Hello World");
+			}
+			else if(choice == 2)
+			{
+				
+			}
+			else if(choice == 3)
+			{
+				
+			}
+			else if(choice == 4)
+			{
+				
+			}
+			else if(choice == 5)
+			{
+				System.out.println("Exitting Program...");
+				System.exit(0);
+			}
+		}while(choice != 5);
+		
+		
+	}
+	
+	public static int displayMenu(int choice)
+	{
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Please choose from the following");
+		System.out.println("1) Output Hello World");
+		System.out.println("2) Return an Array of the first 100 numbers divisible by 3 and 5");
+		System.out.println("3) Palindrome Checker");
+		System.out.println("4) Remove a letter from the word");
+		System.out.println("5) Sum all the elements of an array");
+		System.out.println("Choice --> ");
+		choice = kb.nextInt();
+		
+		return choice;
+	}
+	
+	
+	
+	/*
+	 * This method will return an array of the first 100 numbers 
+	 * that are divisible by 3 and 5.
+	 */
+	
+	public int[] threeByFive(int [] array)
+	{
+		return array;
+	}
+}
