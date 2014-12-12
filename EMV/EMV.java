@@ -19,7 +19,7 @@ public class EMV
    
    }//end selectPSEDirectory()
    
-   public static void read emvScript()
+   public static void reademvScript()
    {
       try
       {
@@ -58,6 +58,20 @@ public class EMV
             print("Exception reading from Credit Card Application: " = e.toString());
          }
       }
+   }//endReadEMVScript
+   
+   public static void PSE()
+   {
+      /*
+         Send SELECT APDU
+      */
+      
+      EMV.prototype.select = function (dfname, first)
+      {
+         var fci = this.card.sendApdu
+                        (0x00, 0xA4, 0x04, (first ? 0x00 : 0x02), dfname, 0x00);
+      }
    }
+   
 
 }//end class
